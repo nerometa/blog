@@ -14,6 +14,6 @@ export async function GET(context) {
 			description: post.data.description,
 			link: `/blog/${post.slug}`,
 		})),
-		stylesheet: "/rss/styles.xsl",
+		stylesheet: import.meta.env.BASE_URL + "/rss/styles.xsl",
 	});
 }
