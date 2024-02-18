@@ -29,8 +29,10 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<ViewTransitions />
 		<title>{title ? `${title} | nerometa.dev` : "nerometa.dev"}</title>
-		<script is:inline src="/lib/theme-utils.js" type="text/javascript"
-		></script>
+		<script
+			is:inline
+			src={import.meta.env.BASE_URL + "/lib/theme-utils.js"}
+			type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="container">
