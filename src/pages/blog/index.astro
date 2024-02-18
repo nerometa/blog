@@ -1,0 +1,79 @@
+---
+import Layout from "@layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+function sortPostsByDate(
+	posts: CollectionEntry<"blog">[]
+): CollectionEntry<"blog">[] {
+	return posts.sort(
+		(a, b) =>
+			new Date(b.data.pubDate).getTime() -
+			new Date(a.data.pubDate).getTime()
+	);
+}
+
+const blogs = sortPostsByDate(
+	await getCollection("blog", (blog) => {
+		return (
+			import.meta.env.MODE !== "production" || blog.data.draft === false
+		);
+	})
+);
+---
+
+<Layout title="Blog">
+	<h1>Blog</h1>
+	<ul class="blogs">
+		{
+			blogs.map((blog) => {
+				return (
+					<>
+						<li class="blog">
+							<h2 transition:name={blog.data.title}>
+								<a href={`blog/${blog.slug}`} class="title">
+									{blog.data.title}
+								</a>
+							</h2>
+
+							<p class="date">
+								{blog.data.pubDate.toLocaleDateString("en-US", {
+									dateStyle: "medium",
+								})}
+							</p>
+						</li>
+					</>
+				);
+			})
+		}
+	</ul>
+</Layout>
+
+<style>
+	.blogs {
+		padding: 0;
+		margin: 0;
+	}
+
+	.blog {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 25px;
+		margin-block: 1rem;
+		list-style-type: none;
+	}
+
+	.title {
+		text-decoration: none;
+		transition: all 50ms ease-in-out;
+	}
+
+	.title:visited {
+		color: inherit;
+	}
+
+	.title:hover {
+		color: var(--title-color__hover);
+	}
+</style>

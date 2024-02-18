@@ -1,0 +1,42 @@
+---
+import "@styles/style.css";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="nerometa.dev website" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.bunny.net" />
+		<link
+			href="https://fonts.bunny.net/css?family=ibm-plex-sans-thai:400,500,600"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.bunny.net/css?family=jetbrains-mono:400,400i"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		<title>{title ? `${title} | nerometa.dev` : "nerometa.dev"}</title>
+		<script is:inline src="/lib/theme-utils.js" type="text/javascript"
+		></script>
+	</head>
+	<body>
+		<div class="container">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
+	</body>
+</html>

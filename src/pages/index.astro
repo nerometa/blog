@@ -1,16 +1,31 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="">
+	<h1>nerometa</h1>
+
+	<section id="hello">
+		<p id="introduction">
+			Hey there! I'm <strong>nerometa</strong>. I'm 20 years old,
+			currently studying for an Associate Degree (or Diploma) in
+			Mechatronics <em>and simultaneously</em> doing Software Developer internship
+			since 2022.
+		</p>
+
+		<p id="interests">
+			My interests are broad, such as DJ'ing and producing music, internet
+			privacy, exploring new web development technologies, reading books,
+			watching anime, playing Warframe, bullet journaling, speedcubing, a
+			touch of local politics and hitting the gym 3 times/week.
+		</p>
+
+		<p id="purposes">
+			This website exists because I think it's an awesome place to share
+			what I learned about software development and reflect some of my
+			personal thoughts. Most of my knowledge were from outside of school.
+			So, I believe that off-campus education is important and it leads me
+			to where I am.
+		</p>
+	</section>
+</Layout>

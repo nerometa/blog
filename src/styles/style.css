@@ -1,0 +1,91 @@
+:root {
+	--bg-color: #fafafa;
+	--text-color: #18181b;
+	--link-color: var(--text-color);
+	--link-underline-color: #69696983;
+	--link-underline-color__hover: #696969;
+	--title-color__hover: rgb(97, 97, 97);
+}
+
+:root[data-theme="dark"] {
+	--bg-color: #18181b;
+	--text-color: #fafafa;
+	--link-color: var(--text-color);
+	--link-underline-color: #afafaf83;
+	--link-underline-color__hover: #afafaf;
+	--title-color__hover: rgb(206, 206, 206);
+}
+
+html {
+	height: 100vh;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: "IBM Plex Sans Thai", sans-serif;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	margin: 0;
+	padding-inline: 1.5rem;
+}
+
+h1 {
+	font-size: 1.6rem;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+}
+
+h2 {
+	font-size: 1.3rem;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+}
+
+h3 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+}
+
+p,
+a {
+	letter-spacing: -0.01em;
+}
+
+a {
+	text-underline-offset: 3px;
+}
+
+body a {
+	color: var(--link-color);
+	text-decoration-color: var(--link-underline-color);
+}
+
+body a:hover {
+	text-decoration-color: var(--link-underline-color__hover);
+}
+
+a:visited {
+	color: inherit;
+}
+
+li {
+	margin-bottom: 0.75rem;
+}
+
+pre {
+	padding: 1em;
+	border-radius: 5px;
+}
+
+code {
+	font-family: "JetBrains Mono", monospace;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 40rem;
+	min-height: 100vh;
+	inset: 0;
+}

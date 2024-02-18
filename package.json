@@ -1,17 +1,25 @@
 {
-  "name": "nerometa-blog-v3",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^4.3.7",
-    "@astrojs/check": "^0.5.4",
-    "typescript": "^5.3.3"
-  }
+	"name": "nerometa-blog-v3",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.4",
+		"@astrojs/mdx": "^2.1.1",
+		"@astrojs/rss": "^4.0.5",
+		"astro": "^4.3.7",
+		"astro-icon": "^1.1.0",
+		"typescript": "^5.3.3"
+	},
+	"devDependencies": {
+		"@iconify-json/akar-icons": "^1.1.23",
+		"@iconify-json/fluent": "^1.1.48",
+		"@iconify-json/mdi": "^1.1.64"
+	}
 }

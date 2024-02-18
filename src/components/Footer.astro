@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+const { url } = Astro;
+---
+
+<footer>
+	<span>nerometa</span>
+	<div class="links">
+		<a class="link github" href="https://github.com/nerometa">
+			<Icon name="mdi:github" style="height: 100%; width: 1em;" />
+		</a>
+		<a class="link rss" href="rss.xml">
+			<Icon name="mdi:rss" style="height: 100%; width: 1em;" />
+		</a>
+		<a class="link email" href="mailto:nerometa@protonmail.com">
+			<Icon
+				name="fluent:mail-24-filled"
+				style="height: 100%; width: 1em;"
+			/>
+		</a>
+	</div>
+</footer>
+
+<style>
+	footer {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 6rem;
+		padding-bottom: 1rem;
+	}
+
+	.links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.link {
+		text-decoration: none;
+	}
+
+	.link:hover {
+		text-decoration: underline;
+	}
+</style>

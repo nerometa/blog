@@ -1,0 +1,51 @@
+---
+title: "How it came to be"
+pubDate: 2024-02-15
+description: "An article about building this blog up from scratch."
+author: "nerometa"
+draft: false
+---
+
+I still remember vividly when I was recently getting an internship last year. My knowledge was _zero_. Well, not entirely. I did write some webpage with HTML and CSS before I apply to an internship, though at the time it wasn't enough for a real work, or so I thought.
+
+Fast forward a year and a couple months, it was a normal day in the office. I opened my work laptop and watched some YouTube videos to 'switch context'. There was this video by ThePrimeagen reading an article about why the author switched from [Neovim to VSCode](https://www.nexxel.dev/blog/neovim-to-vscode). Now, the content was really good for sure and I just so happened to loved the theme that he used, so much so that I emailed him after that and also mentioned about my blog in progress and that his blog was one of my design inspirations.
+
+## 🧠 My thought process
+
+I wanted a simple blog with just a few color palette. Something that looks clean and pristine with a lot of room to breathe. Just essential blog features like, well, blog section, contacts and an introduction home page. I also wanna build this website with performance in mind, something I didn't really learn and use during my internship, hence why I choose to keep things simple with vanilla CSS and JavaScript and all.
+
+There were several inspirations I drawn from by the likes of [Tiny Projects](https://daily.tinyprojects.dev/), [Guy Torbet](https://torbet.co/), [nexxel.dev](https://nexxel.dev) (the guy I emailed for VSCode theme), [Shu Ding](https://shud.in/) (big influence), even the [Even Better Mother Fucking Website](https://evenbettermotherfucking.website/) and [bearblog.dev](https://bearblog.dev/).
+
+Speaking of bearblog.dev, though the platform would be enough for my needs, I wanted to have most of the control over my blog in case I want to add any fancy stuffs. I wanted to learn every step of the way how to write and deploy my own website.
+
+## 💻 Code away
+
+So, I started! At first, I was gonna use Astro along with Svelte but when I saw Astro 3 update at the office, I ditched the Svelte part and solely use Astro. Chasing the new, shiny trends, I guess.
+
+I didn't come up with a design before I coded this, I simply glanced multiple times over my inspirations and came up with what I'm happy with as I go. As to getting my website up and running, I followed the [tech independence](https://sive.rs/ti) guide right here.
+
+All I had was a single laptop, but that's not gonna keep me away from making my own website.
+
+## 🚧 Roadblocks
+
+Of course it has to be the work AND college. Due to my unique circumstance, The work is not just a part-time at McDonalds, or 7-Eleven, but I was exposed to the real developer job since I was the only intern who was treated as such with less than half the pay per month compared to an average Software Developer (Apparently, you're considered lucky to get paid internship here. I can't complain).
+
+My college requires me to study every Sunday, plus it was like 2 hours away from where I work. I had to catch the college bus at 5-6 AM. Sometimes I brought my laptop and work on this every now and then.
+
+Now, onto obstacles with the website itself.
+
+Internationalization (i18n) is the main obstacle. I skill issue'd hard on this one even with libraries. I was so delighted to not depended on i18n libraries when Astro 4 came out, but with all things open source and new, there's still a bug. [This bug](https://github.com/withastro/astro/issues/10005) was what I experienced. I had to scrap it for now. Kinda bummed out a bit not being able to write content in both languages that I know.
+
+Next up, it's the dark/light mode switch. That would've been easier if I use any other framework, or Tailwind CSS, but with vanilla CSS and JavaScript it's back to basic once again. I didn't remember where I got the script from and I had to write comments to explain myself. When Astro introduced View Transition API, it's the time I finally made some change to it by listen for `astro-swap` event and set the theme all over again.
+
+```js
+// use after-swap listener to persist theme change
+document.addEventListener("astro:after-swap", () => {
+	const theme = getColorPreference();
+	setPreference(theme);
+});
+```
+
+## 🏁 Conclusion
+
+I'm happy with what I've created so far. There's a certain feeling I can't explain in words how much time I spent working on a website or a web application, making it fancy enough to impress customers, then come back home and coding your own website that supposedly simpler than what you're capable of but still works just as well. I think the magic behind this is: You know you're on to something when solutions you provided are shockingly simple than the other way around. And I guess it's the same way for professors in a college. You know they're damn good at their job when they teach you topics so complex with explanations that are so simple.
