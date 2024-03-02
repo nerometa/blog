@@ -31,7 +31,7 @@ const { title } = Astro.props;
 		<title>{title ? `${title} | nerometa.dev` : "nerometa.dev"}</title>
 		<script
 			is:inline
-			src={import.meta.env.BASE_URL + "/lib/theme-utils.js"}
+			src="/lib/theme-utils.js"
 			type="text/javascript"></script>
 	</head>
 	<body>
