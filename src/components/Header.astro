@@ -3,17 +3,17 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header>
-	<a href={import.meta.env.BASE_URL}>Home</a>
+	<a href="/">Home</a>
 	<nav>
 		<ul>
 			<li>
-				<a href={import.meta.env.BASE_URL + "/blog"}>Blog</a>
+				<a href="/blog">Blog</a>
 			</li>
 			<li>
-				<a href={import.meta.env.BASE_URL + "/about"}>About</a>
+				<a href="/about">About</a>
 			</li>
 			<li>
-				<a href={import.meta.env.BASE_URL + "/now"}>Now</a>
+				<a href="/now">Now</a>
 			</li>
 			<li>
 				<button id="theme-btn" onclick="togglePreference()">

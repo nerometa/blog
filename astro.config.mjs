@@ -4,8 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://nerometa.github.io",
-	base: "/nerometa.dev",
+	site: "https://www.nerometa.dev/",
 	integrations: [
 		mdx(),
 		icon({
