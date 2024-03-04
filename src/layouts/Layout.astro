@@ -18,13 +18,12 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="preconnect" href="https://fonts.bunny.net" />
 		<link
-			href="https://fonts.bunny.net/css?family=ibm-plex-sans-thai:400,500,600"
-			rel="stylesheet"
+			href="https://fonts.bunny.net/css?family=ibm-plex-sans-thai:400,500,600|jetbrains-mono:400,400i&display=swap"
+			rel="preload"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
-		<link
-			href="https://fonts.bunny.net/css?family=jetbrains-mono:400,400i"
-			rel="stylesheet"
-		/>
+		<noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=ibm-plex-sans-thai:400,500,600|jetbrains-mono:400,400i&display=swap"></noscript>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<ViewTransitions />
@@ -32,7 +31,10 @@ const { title } = Astro.props;
 		<script
 			is:inline
 			src="/lib/theme-utils.js"
-			type="text/javascript"></script>
+			type="text/javascript"
+			defer
+		>
+		</script>
 	</head>
 	<body>
 		<div class="container">
