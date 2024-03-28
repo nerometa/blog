@@ -30,13 +30,13 @@ const blogs = sortPostsByDate(
 				return (
 					<>
 						<li class="blog">
-							<h2 transition:name={blog.data.title}>
+							<h3 transition:name={blog.data.title}>
 								<a
 									href={`/blog/${blog.slug}`}
 									class="title">
 									{blog.data.title}
 								</a>
-							</h2>
+							</h3>
 
 							<p class="date">
 								{blog.data.pubDate.toLocaleDateString("en-US", {
@@ -64,6 +64,10 @@ const blogs = sortPostsByDate(
 		height: 25px;
 		margin-block: 1rem;
 		list-style-type: none;
+	}
+
+	.date {
+		color: #696969;
 	}
 
 	.title {

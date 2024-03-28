@@ -19,6 +19,9 @@ const { Content } = await blog.render();
 ---
 
 <Layout title={blog.data.title}>
-	<h1 transition:name={blog.data.title}>{blog.data.title}</h1>
-	<Content />
+	<section class="blog-post">
+		<h1 transition:name={blog.data.title}>{blog.data.title}</h1>
+		<Content />
+	</section>
 </Layout>
+
