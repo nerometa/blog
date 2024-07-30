@@ -90,6 +90,7 @@ pre {
 
 code {
 	font-family: "JetBrains Mono", monospace;
+	font-size: 0.875rem;
 }
 
 .container {
@@ -103,4 +104,9 @@ code {
 
 .blog-post h2 {
 	margin-block: 3rem 1.5rem;
+}
+
+.blog-post img {
+	width: 100%;
+	border-radius: 0.5rem;
 }
