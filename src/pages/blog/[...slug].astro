@@ -20,6 +20,7 @@ const { Content } = await blog.render();
 
 <Layout title={blog.data.title}>
 	<section class="blog-post">
+		<p class="date">{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</p>
 		<h1 transition:name={blog.data.title}>{blog.data.title}</h1>
 		<Content />
 	</section>

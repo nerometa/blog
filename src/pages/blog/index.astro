@@ -58,21 +58,17 @@ const blogs = sortPostsByDate(
 	}
 
 	.blog {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 25px;
-		margin-block: 1rem;
 		list-style-type: none;
+		margin-bottom: 0.5rem;
 	}
 
-	.date {
-		color: #696969;
+	.blog > * {
+		margin: 0;
 	}
 
 	.title {
 		text-decoration: none;
-		transition: all 50ms ease-in-out;
+		transition: color 150ms ease-in-out;
 	}
 
 	.title:visited {
@@ -81,5 +77,17 @@ const blogs = sortPostsByDate(
 
 	.title:hover {
 		color: var(--title-color__hover);
+	}
+
+	.date {
+		flex: 0 0 130px;
+	}
+
+	@media (min-width: 25rem) {
+		.blog {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 	}
 </style>
