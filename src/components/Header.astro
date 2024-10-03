@@ -1,19 +1,26 @@
 ---
 import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { type Lang } from '@i18n/i18n';
+
+function removeLanguagePrefix(path: string) {
+	const [maybeLanguage, ...rest] = path.split('/').filter(Boolean);
+	return Astro.currentLocale === maybeLanguage ? rest.join('/') : path;
+}
+const currentPathWithoutLanguage = removeLanguagePrefix(Astro.url.pathname);
+const locale = Astro.currentLocale as Lang;
 ---
 
 <header>
-	<a href="/">Home</a>
-	<nav>
-		<ul>
+	<div id="top-bar">
+		<a class="title" href={locale === "en" ? "/" : "/th/"}>
+			<h1>nerometa</h1>
+		</a>
+		<ul id="controls">
 			<li>
-				<a href="/blog">Blog</a>
-			</li>
-			<li>
-				<a href="/about">About</a>
-			</li>
-			<li>
-				<a href="/now">Now</a>
+				<a href={getRelativeLocaleUrl(locale === "en" ? "th" : "en", currentPathWithoutLanguage)} title={locale === "en" ? "Switch to Thai" : "เปลี่ยนเป็นภาษาอังกฤษ"}>
+					<button id="locale-switcher">{locale === "en" ? "🇹🇭" : "🇺🇸"}</button>
+				</a>
 			</li>
 			<li>
 				<button id="theme-btn" title="Switch Theme" onclick="togglePreference()">
@@ -32,18 +39,51 @@ import { Icon } from "astro-icon/components";
 				</button>
 			</li>
 		</ul>
+	</div>
+	
+	<nav>
+		<ul>
+			<li>
+				<a href={getRelativeLocaleUrl(locale, "blog")}>Blog</a>
+			</li>
+			<li>
+				<a href={getRelativeLocaleUrl(locale, "about")}>About</a>
+			</li>
+			<li>
+				<a href={getRelativeLocaleUrl(locale, "now")}>Now</a>
+			</li>
+		</ul>
+		
 	</nav>
 </header>
 
 <style>
 	header {
+		padding-top: 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	#top-bar {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		flex-wrap: wrap;
-		padding-top: 1rem;
-		height: 56px;
+		margin-block: 1rem
 	}
+
+	.title {
+		text-decoration: none;
+	}
+
+	.title > h1 {
+		font-size: 1.4rem;
+		margin: 0;
+	}
+
+	nav {
+		display: flex;
+		margin-block: 1rem;
+	}
+
 	ul {
 		display: flex;
 		list-style-type: none;
@@ -56,11 +96,21 @@ import { Icon } from "astro-icon/components";
 		margin: 0;
 	}
 
+	#locale-switcher {
+		padding: 0;
+		text-align: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+	}
+
 	#theme-btn {
 		display: flex;
 		background: none;
 		border: none;
 		cursor: pointer;
+		padding: 0;
 		color: var(--text-color);
 	}
 

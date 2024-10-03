@@ -34,15 +34,19 @@ My college requires me to study every Sunday, plus it was like 2 hours away from
 
 Now, onto obstacles with the website itself.
 
-Internationalization (i18n) is the main obstacle. I skill issue'd hard on this one even with libraries. I was so delighted to not depended on i18n libraries when Astro 4 came out, but with all things open source and new, there's still a bug. [This bug](https://github.com/withastro/astro/issues/10005) was what I experienced. I had to scrap it for now. Kinda bummed out a bit not being able to write content in both languages that I know.
+~Internationalization (i18n) is the main obstacle. I skill issue'd hard on this one even with libraries. I was so delighted to not depended on i18n libraries when Astro 4 came out, but with all things open source and new, there's still a bug. [This bug](https://github.com/withastro/astro/issues/10005) was what I experienced. I had to scrap it for now. Kinda bummed out a bit not being able to write content in both languages that I know.~
+
+> Hey there! This is nerometa from the future. If you have a chance to read this article in both languages, that means I've successfully implemented the i18n feature! Yayyy 🎊. The latest version of Astro has a pretty consise i18n documentation that I could follow through. I could make it work on the same page too, but currently not with the blog section.
+>
+> — _Updated Oct 3, 2024_
 
 Next up, it's the dark/light mode switch. That would've been easier if I use any other framework, or Tailwind CSS, but with vanilla CSS and JavaScript it's back to basic once again. I didn't remember where I got the script from and I had to write comments to explain myself. When Astro introduced View Transition API, it's the time I finally made some change to it by listen for `astro-swap` event and set the theme all over again.
 
 ```js
 // use after-swap listener to persist theme change
 document.addEventListener("astro:after-swap", () => {
-	const theme = getColorPreference();
-	setPreference(theme);
+  const theme = getColorPreference();
+  setPreference(theme);
 });
 ```
 

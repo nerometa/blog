@@ -1,8 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import type { Lang } from "@i18n/i18n";
 
+const locale = Astro.currentLocale as Lang;
 function sortPostsByDate(
 	posts: CollectionEntry<"blog">[]
 ): CollectionEntry<"blog">[] {
@@ -19,12 +21,11 @@ const blogs = sortPostsByDate(
 			import.meta.env.MODE !== "production" || blog.data.draft === false
 		);
 	})
-).filter((blog) => blog.slug.split("/").length === 1);
-
+).filter((blog) => blog.slug.split("/")[0] === locale);
 ---
 
-<Layout title="Blog">
-	<h1>Blog</h1>
+<Layout title="บล็อก">
+	<h1>บล็อก</h1>
 	<ul class="blogs">
 		{
 			blogs.map((blog) => {
@@ -33,7 +34,7 @@ const blogs = sortPostsByDate(
 						<li class="blog">
 							<h3 transition:name={blog.data.title}>
 								<a
-									href={blog.slug}
+									href={`/blog/${blog.slug}`}
 									class="title">
 									{blog.data.title}
 								</a>
