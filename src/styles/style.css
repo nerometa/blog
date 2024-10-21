@@ -115,9 +115,19 @@ code {
   margin-block: 3rem 1.5rem;
 }
 
-.blog-post img {
+.blog-post > img {
   width: 100%;
   border-radius: 0.5rem;
+}
+
+.blog-post .img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 0.5rem;
+  }
 }
 
 .blog .date,
