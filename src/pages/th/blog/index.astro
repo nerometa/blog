@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import type { Lang } from "@i18n/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const locale = Astro.currentLocale as Lang;
 function sortPostsByDate(
@@ -29,12 +30,13 @@ const blogs = sortPostsByDate(
 	<ul class="blogs">
 		{
 			blogs.map((blog) => {
+				const [, ...slug] = blog.slug.split("/")
 				return (
 					<>
 						<li class="blog">
 							<h3 transition:name={blog.data.title}>
 								<a
-									href={`/blog/${blog.slug}`}
+									href={getRelativeLocaleUrl('th', `blog/${slug}`)}
 									class="title">
 									{blog.data.title}
 								</a>
