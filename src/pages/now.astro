@@ -3,46 +3,50 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Now">
-	<h1>What I'm up to</h1>
-
-	<h2>Software Development & Tech</h2>
-	<ul>
-		<li>
-			I like <strong
-				>discovering new software development resources</strong
-			>. In fact, I did a PR on <a href="https://framework.dev/"
-				>framework.dev</a
-			> because I want people to know these resources I found.
-		</li>
-		<li>
-			<strong>I'm looking into more internet privacy</strong>. I've been
-			trying to minimize digital threats as much as I can for a few years
-			according to my
-			<a href="https://www.privacyguides.org/en/basics/threat-modeling/"
-				>threat model</a
-			> and will shoot for more.
-		</li>
-		<li>
-			Probably related to internet privacy, but I'm also looking into <strong
-				>self-hosting</strong
-			> some of alternative to services I frequently use.
-		</li>
-	</ul>
-
-	<h2>Personal Life</h2>
-	<ul>
-		<li>
-			<strong>I'm studying for my Computer Engineering degree!</strong>
-		</li>
-		<li>
-			<strong>I'm a DJ/Producer</strong> outside of work. Just recently played a gig on Saturday, March 2 on a cruise ship. Looking to go into more production side.
-		</li>
-		<li>
-			Reading tons of book. Currently on How to become a Straight-A Student and Meditations (Gregory Hays version).
-		</li>
-		<li>
-			<strong>Journaling</strong>. I find this really helpful for winding
-			down at the end of the day. I do both normal and bullet journaling.
-		</li>
-	</ul>
+	<article class="h-entry">
+		<h1 class="p-name">What I'm up to</h1>
+	
+		<content class="e-content">
+			<h2>Software Development & Tech</h2>
+			<ul>
+				<li>
+					I like <strong
+						>discovering new software development resources</strong
+					>. In fact, I did a PR on <a href="https://framework.dev/"
+						>framework.dev</a
+					> because I want people to know these resources I found.
+				</li>
+				<li>
+					<strong>I'm looking into more internet privacy</strong>. I've been
+					trying to minimize digital threats as much as I can for a few years
+					according to my
+					<a href="https://www.privacyguides.org/en/basics/threat-modeling/"
+						>threat model</a
+					> and will shoot for more.
+				</li>
+				<li>
+					Probably related to internet privacy, but I'm also looking into <strong
+						>self-hosting</strong
+					> some of alternative to services I frequently use.
+				</li>
+			</ul>
+		
+			<h2>Personal Life</h2>
+			<ul>
+				<li>
+					<strong>I'm studying for my Computer Engineering degree!</strong>
+				</li>
+				<li>
+					<strong>I'm a DJ/Producer</strong> outside of work. Just recently played a gig on Saturday, March 2 on a cruise ship. Looking to go into more production side.
+				</li>
+				<li>
+					Reading tons of book. Currently on How to become a Straight-A Student and Meditations (Gregory Hays version).
+				</li>
+				<li>
+					<strong>Journaling</strong>. I find this really helpful for winding
+					down at the end of the day. I do both normal and bullet journaling.
+				</li>
+			</ul>
+		</content>
+	</article>
 </Layout>

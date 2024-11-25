@@ -26,33 +26,35 @@ const blogs = sortPostsByDate(
 ---
 
 <Layout title="บล็อก">
-	<h1>บล็อก</h1>
-	<ul class="blogs">
-		{
-			blogs.map((blog) => {
-				const [, ...slug] = blog.slug.split("/")
-				return (
-					<>
-						<li class="blog">
-							<h3 transition:name={blog.data.title}>
-								<a
-									href={getRelativeLocaleUrl('th', `blog/${slug}`)}
-									class="title">
-									{blog.data.title}
-								</a>
-							</h3>
-
-							<p class="date">
-								{blog.data.pubDate.toLocaleDateString("en-US", {
-									dateStyle: "medium",
-								})}
-							</p>
-						</li>
-					</>
-				);
-			})
-		}
-	</ul>
+	<article class="h-entry">
+		<h1 class="p-name">บล็อก</h1>
+		<ul class="blogs e-content">
+			{
+				blogs.map((blog) => {
+					const [, ...slug] = blog.slug.split("/")
+					return (
+						<>
+							<li class="blog">
+								<h3 transition:name={blog.data.title}>
+									<a
+										href={getRelativeLocaleUrl('th', `blog/${slug}`)}
+										class="title">
+										{blog.data.title}
+									</a>
+								</h3>
+	
+								<time class="date dt-published" datetime={blog.data.pubDate}>
+									{blog.data.pubDate.toLocaleDateString("en-US", {
+										dateStyle: "medium",
+									})}
+								</time>
+							</li>
+						</>
+					);
+				})
+			}
+		</ul>
+	</article>
 </Layout>
 
 <style>

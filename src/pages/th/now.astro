@@ -3,43 +3,47 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="ตอนนี้">
-	<h1>ตอนนี้เราทำอะไร</h1>
-
-	<h2>Software Development & Tech</h2>
-	<ul>
-		<li>
-			เราชอบ<strong
-				>ค้นหาสิ่งใหม่ๆ เกี่ยวกับ software development</strong
-			> เอาจริงๆ เราเคยเปิด PR ที่ <a href="https://framework.dev/"
-				>framework.dev</a
-			> เหมือนกัน เพราะเราอยากให้คนอื่นรู้จักสิ่งที่เราหามาได้
-		</li>
-		<li>
-			<strong>เรากำลังดูเรื่อง internet privacy ให้มากขึ้น</strong> พยายามลดจุดเสี่ยงทางดิจิทัลให้มากที่สุดเท่าที่จะทำได้ตาม
-			<a href="https://www.privacyguides.org/en/basics/threat-modeling/"
-				>threat model</a
-			> และจะลดให้มากกว่านี้
-		</li>
-		<li>
-			อันนี้อาจจะเกี่ยวกับ internet privacy ก็ได้ แต่เราก็เริ่มมองเรื่อง <strong
-				>self-hosting</strong
-			> บริการบางอย่างแทนที่บริการ third party ที่เราชอบใช้
-		</li>
-	</ul>
-
-	<h2>ชีวิตส่วนตัว</h2>
-	<ul>
-		<li>
-			<strong>เรากำลังเรียนต่อปริญญาตรีวิศวะคอม!</strong>
-		</li>
-		<li>
-			<strong>เราเป็นดีเจ/โปรดิวเซอร์</strong>นอกเวลางาน พึ่งได้เล่นงานบนเรือสำราญวันเสาร์ที่ 2 มีนาคมนี่เองครับ กำลังดูเรื่องการทำเพลงให้มากขึ้น
-		</li>
-		<li>
-			อ่านหนังสือหลายเล่มมาก ตอนนี้กำลังอ่าน How to become a Straight-A Student กับ Meditations (เวอร์ชั่นที่แปลโดย Gregory Hays).
-		</li>
-		<li>
-			<strong>จดบันทึก</strong> เราพบว่าเป็นกิจกรรมที่มีประโยชน์มากเพื่อให้เราผ่อนคลายตอนจบวัน เราจดบันทึกทั้งแบบปกติและบูโจ
-		</li>
-	</ul>
+	<article class="h-entry">
+		<h1 class="p-name">ตอนนี้เราทำอะไร</h1>
+	
+		<content class="e-content">
+			<h2>Software Development & Tech</h2>
+			<ul>
+				<li>
+					เราชอบ<strong
+						>ค้นหาสิ่งใหม่ๆ เกี่ยวกับ software development</strong
+					> เอาจริงๆ เราเคยเปิด PR ที่ <a href="https://framework.dev/"
+						>framework.dev</a
+					> เหมือนกัน เพราะเราอยากให้คนอื่นรู้จักสิ่งที่เราหามาได้
+				</li>
+				<li>
+					<strong>เรากำลังดูเรื่อง internet privacy ให้มากขึ้น</strong> พยายามลดจุดเสี่ยงทางดิจิทัลให้มากที่สุดเท่าที่จะทำได้ตาม
+					<a href="https://www.privacyguides.org/en/basics/threat-modeling/"
+						>threat model</a
+					> และจะลดให้มากกว่านี้
+				</li>
+				<li>
+					อันนี้อาจจะเกี่ยวกับ internet privacy ก็ได้ แต่เราก็เริ่มมองเรื่อง <strong
+						>self-hosting</strong
+					> บริการบางอย่างแทนที่บริการ third party ที่เราชอบใช้
+				</li>
+			</ul>
+		
+			<h2>ชีวิตส่วนตัว</h2>
+			<ul>
+				<li>
+					<strong>เรากำลังเรียนต่อปริญญาตรีวิศวะคอม!</strong>
+				</li>
+				<li>
+					<strong>เราเป็นดีเจ/โปรดิวเซอร์</strong>นอกเวลางาน พึ่งได้เล่นงานบนเรือสำราญวันเสาร์ที่ 2 มีนาคมนี่เองครับ กำลังดูเรื่องการทำเพลงให้มากขึ้น
+				</li>
+				<li>
+					อ่านหนังสือหลายเล่มมาก ตอนนี้กำลังอ่าน How to become a Straight-A Student กับ Meditations (เวอร์ชั่นที่แปลโดย Gregory Hays).
+				</li>
+				<li>
+					<strong>จดบันทึก</strong> เราพบว่าเป็นกิจกรรมที่มีประโยชน์มากเพื่อให้เราผ่อนคลายตอนจบวัน เราจดบันทึกทั้งแบบปกติและบูโจ
+				</li>
+			</ul>
+		</content>
+	</article>
 </Layout>

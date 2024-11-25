@@ -3,33 +3,38 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="About">
-	<h1>About me</h1>
-	<p>
-		I'm a software developer intern since 2022, working full-stack (more
-		front-end focused) with Angular and NestJS. I'm able to do this while
-		also studying for Associate Degree (or Diploma) in Mechatronics.</p>
+	<article class="h-entry">
+		<h1 class="p-name">About me</h1>
 
-	<p>
-		My college has an
-		internship programs where you get to do <em>paid</em> internship with a condition
-		that I have to do it until I graduated, which means 2 years of internship.
-
-	</p>
-
-	<p>
-		I continued my education by enrolled in Bachelor's in Computer Engineering. Looks promising and fun, though.
-	</p>
-
-	<p>
-		I really, really hope to work on more front-end side of things. I just
-		love seeing my code visually going into places little by little.
-	</p>
-
-	<h2>About this website</h2>
-
-	<ul>
-		<li><strong>Astro</strong> for the web</li>
-		<li><strong>Vanilla CSS</strong> for styling without all the fuss</li>	
-		<li><strong>JavaScript</strong> for theme switcher</li>
-	</ul>
+		<content class="e-content">
+			<p>
+				I'm a software developer intern since 2022, working full-stack (more
+				front-end focused) with Angular and NestJS. I'm able to do this while
+				also studying for Associate Degree (or Diploma) in Mechatronics.</p>
+		
+			<p>
+				My college has an
+				internship programs where you get to do <em>paid</em> internship with a condition
+				that I have to do it until I graduated, which means 2 years of internship.
+		
+			</p>
+		
+			<p>
+				I continued my education by enrolled in Bachelor's in Computer Engineering. Looks promising and fun, though.
+			</p>
+		
+			<p>
+				I really, really hope to work on more front-end side of things. I just
+				love seeing my code visually going into places little by little.
+			</p>
+		
+			<h2>About this website</h2>
+		
+			<ul>
+				<li><strong>Astro</strong> for the web</li>
+				<li><strong>Vanilla CSS</strong> for styling without all the fuss</li>	
+				<li><strong>JavaScript</strong> for theme switcher</li>
+			</ul>
+		</content>
+	</article>
 </Layout>

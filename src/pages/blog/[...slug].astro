@@ -19,10 +19,12 @@ const { Content } = await blog.render();
 ---
 
 <Layout title={blog.data.title}>
-	<section class="blog-post">
-		<p class="date">{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</p>
-		<h1 transition:name={blog.data.title}>{blog.data.title}</h1>
-		<Content />
-	</section>
+	<article class="blog-post h-entry">
+		<time class="date dt-published" datetime={blog.data.pubDate}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
+		<h1 class="p-name" transition:name={blog.data.title}>{blog.data.title}</h1>
+		<content class="e-content">
+			<Content />
+		</content>
+	</article>
 </Layout>
 

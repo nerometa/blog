@@ -132,6 +132,7 @@ code {
 
 .blog .date,
 .blog-post .date {
+  display: block;
   font-family: "JetBrains Mono", monospace;
   font-size: 15px;
   color: #696969;
