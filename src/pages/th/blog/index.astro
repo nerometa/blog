@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import type { Lang } from "@i18n/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -31,7 +31,7 @@ const blogs = sortPostsByDate(
 		<ul class="blogs e-content">
 			{
 				blogs.map((blog) => {
-					const [, ...slug] = blog.slug.split("/")
+					const [, ...slug] = blog.data.slug.split("/")
 					return (
 						<>
 							<li class="blog">
