@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import type { Lang } from "@i18n/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -22,7 +22,7 @@ const blogs = sortPostsByDate(
 			import.meta.env.MODE !== "production" || blog.data.draft === false
 		);
 	})
-).filter((blog) => blog.slug.split("/")[0] === locale);
+).filter((blog) => blog.data.slug.split("/")[0] === locale);
 ---
 
 <Layout title="บล็อก">

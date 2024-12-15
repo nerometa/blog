@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
 	const blogs = await getCollection("blog");
@@ -15,12 +15,12 @@ export async function getStaticPaths() {
 }
 
 const blog = Astro.props;
-const { Content } = await blog.render();
+const { Content } = await render(blog);
 ---
 
 <Layout title={blog.data.title}>
 	<article class="blog-post h-entry">
-		<time class="date dt-published" datetime={blog.data.pubDate}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
+		<time class="date dt-published" datetime={blog.data.pubDate.toISOString()}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
 		<h1 class="p-name" transition:name={blog.data.title}>{blog.data.title}</h1>
 		<content class="e-content">
 			<Content />

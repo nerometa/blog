@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://www.nerometa.dev/",
+	site: "https://blog.nerometa.dev/",
 	integrations: [
 		mdx(),
 		icon({
@@ -41,5 +41,8 @@ export default defineConfig({
 	i18n: {
 		defaultLocale: 'en',
 		locales: ['en', 'th']
+	},
+	experimental: {
+		responsiveImages: true,
 	}
 });

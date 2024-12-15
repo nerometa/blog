@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths() {
 	const blogs = await getCollection("blog");
 	return blogs.map((blog) => {
-		const [, ...slug] = blog.slug.split('/')
+		const [, ...slug] = blog.data.slug.split('/')
 		return {
 			params: {
 				slug: slug.join('/'),
@@ -21,7 +21,7 @@ const { Content } = await blog.render();
 
 <Layout title={blog.data.title}>
 	<article class="blog-post h-entry">
-		<time class="date dt-published" datetime={blog.data.pubDate}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
+		<time class="date dt-published" datetime={blog.data.pubDate.toISOString()}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
 		<h1 class="p-name" transition:name={blog.data.title}>{blog.data.title}</h1>
 		<content class="e-content">
 			<Content />
