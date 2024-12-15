@@ -2,20 +2,24 @@
 import "@styles/style.css";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { ClientRouter  } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={Astro.currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="nerometa.dev website" />
+		<meta name="description" content="nerometa.dev blog" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content="nerometa" />
+		{description && <meta name="description" content={description} />}
 		<link rel="preconnect" href="https://fonts.bunny.net" />
 		<link
 			href="https://fonts.bunny.net/css?family=anuphan:400,500,600|jetbrains-mono:400,400i&display=swap"
@@ -26,7 +30,6 @@ const { title } = Astro.props;
 		<noscript><link rel="stylesheet" href="https://fonts.bunny.net/css?family=anuphan:400,500,600|jetbrains-mono:400,400i&display=swap"></noscript>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="alternate" type="application/rss+xml" title="blog.nerometa.dev" href={new URL("rss.xml", Astro.site)}/>
-		<meta name="generator" content={Astro.generator} />
 		<ClientRouter  />
 		<title>{title ? `${title} | nerometa.dev` : "nerometa.dev"}</title>
 		<script
