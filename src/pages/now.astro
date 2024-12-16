@@ -1,52 +1,91 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
+
+const updatedAt = new Date('2024-12-16');
 ---
 
 <Layout title="Now">
-	<article class="h-entry">
-		<h1 class="p-name">What I'm up to</h1>
-	
-		<content class="e-content">
-			<h2>Software Development & Tech</h2>
-			<ul>
-				<li>
-					I like <strong
-						>discovering new software development resources</strong
-					>. In fact, I did a PR on <a href="https://framework.dev/"
-						>framework.dev</a
-					> because I want people to know these resources I found.
-				</li>
-				<li>
-					<strong>I'm looking into more internet privacy</strong>. I've been
-					trying to minimize digital threats as much as I can for a few years
-					according to my
-					<a href="https://www.privacyguides.org/en/basics/threat-modeling/"
-						>threat model</a
-					> and will shoot for more.
-				</li>
-				<li>
-					Probably related to internet privacy, but I'm also looking into <strong
-						>self-hosting</strong
-					> some of alternative to services I frequently use.
-				</li>
-			</ul>
-		
-			<h2>Personal Life</h2>
-			<ul>
-				<li>
-					<strong>I'm studying for my Computer Engineering degree!</strong>
-				</li>
-				<li>
-					<strong>I'm a DJ/Producer</strong> outside of work. Just recently played a gig on Saturday, March 2 on a cruise ship. Looking to go into more production side.
-				</li>
-				<li>
-					Reading tons of book. Currently on How to become a Straight-A Student and Meditations (Gregory Hays version).
-				</li>
-				<li>
-					<strong>Journaling</strong>. I find this really helpful for winding
-					down at the end of the day. I do both normal and bullet journaling.
-				</li>
-			</ul>
-		</content>
-	</article>
+    <article class="h-entry">
+        <h1 class="p-name">What I'm up to</h1>
+        <time class="date" datetime={updatedAt.toISOString()}>
+            Updated {
+                updatedAt.toLocaleDateString('en-US', {
+                    dateStyle: 'medium',
+                })
+            }
+        </time>
+
+        <content class="e-content">
+            <h2>Career</h2>
+            <ul>
+                <li>
+                    💻 Adjusting to my first programming job. (Will likely write
+                    a blog post about it soon after reaching a month of
+                    employment.)
+                </li>
+            </ul>
+
+            <h2>Artist</h2>
+            <ul>
+                <li>🎵 Planning to release my old song from 2-3 years ago.</li>
+                <li>🎼 Working on a new song, wants it to be a collab.</li>
+            </ul>
+
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    💻 Got my Java assignment done long ago, but not turned in
+                    yet lol.
+                </li>
+                <li>🇯🇵 I'm learning Japanese!</li>
+            </ul>
+
+            <h2>Music</h2>
+            <ul>
+                <li>
+                    <a
+                        href="https://www.youtube.com/watch?v=H_MwWWRkmoA&pp=ygUMdWRleCB0b21vcnJv"
+                        >Udex - Tomorrow</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.youtube.com/watch?v=KLhOa5Jm1js&pp=ygUQZ29qaXJhIGFoIGNhIGlyYQ%3D%3D"
+                        >Gojira - Mea Culpa (Ah! Ça ira!)
+                    </a>
+                </li>
+            </ul>
+
+            <h2>Video Games</h2>
+            <p>
+                You should check out Warframe, especially the latest patch
+                called 1999. It's so amazing.
+            </p>
+
+            <h2>Personal</h2>
+            <ul>
+                <li>💓 Trying to get my life back together.</li>
+                <li>
+                    💰 Working on getting better at personal finance; Saving up
+                    an emergency fund.
+                </li>
+            </ul>
+        </content>
+    </article>
 </Layout>
+
+<style>
+    .e-content {
+        display: block;
+        margin-top: 3rem;
+    }
+
+    h2 {
+        margin-block: 1.5rem 0.75rem;
+    }
+
+    ul,
+    p {
+        margin-block: 0;
+    }
+</style>
