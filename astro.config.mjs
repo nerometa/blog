@@ -42,7 +42,7 @@ export default defineConfig({
 		defaultLocale: 'en',
 		locales: ['en', 'th']
 	},
-	experimental: {
+	image: {
 		responsiveImages: true,
 	}
 });
