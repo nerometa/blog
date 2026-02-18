@@ -10,17 +10,16 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^4.3.3",
-		"@astrojs/rss": "^4.0.12",
-		"astro": "^5.12.9",
-		"astro-icon": "^1.1.2",
-		"typescript": "^5.7.2"
+		"@astrojs/check": "^0.9.6",
+		"@astrojs/mdx": "^4.3.13",
+		"@astrojs/rss": "^4.0.15",
+		"astro": "^5.17.2",
+		"astro-icon": "^1.1.5",
+		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@iconify-json/akar-icons": "^1.2.1",
-		"@iconify-json/fluent": "^1.2.7",
-		"@iconify-json/mdi": "^1.2.1"
-	},
-	"packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+		"@iconify-json/akar-icons": "^1.2.7",
+		"@iconify-json/fluent": "^1.2.39",
+		"@iconify-json/mdi": "^1.2.3"
+	}
 }
