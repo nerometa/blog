@@ -4,8 +4,8 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 function sortPostsByDate(
-	posts: CollectionEntry<"blog">[]
-): CollectionEntry<"blog">[] {
+	posts: CollectionEntry<'blog'>[]
+): CollectionEntry<'blog'>[] {
 	return posts.sort(
 		(a, b) =>
 			new Date(b.data.pubDate).getTime() -
