@@ -3,9 +3,11 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-	const blogs = await getCollection("blog");
+	const blogs = await getCollection("blog", (blog) =>
+		blog.data.slug.startsWith("th/")
+	);
 	return blogs.map((blog) => {
-		const [, ...slug] = blog.data.slug.split('/')
+		const [, ...slug] = blog.data.slug.split('/');
 		return {
 			params: {
 				slug: slug.join('/'),
@@ -30,4 +32,3 @@ const { Content } = await render(blog);
 		<!-- TODO: Write `u-url` (permalink) microformat for the IndieWeb -->
 	</article>
 </Layout>
-

@@ -40,7 +40,7 @@ const blogs = sortPostsByDate(
 									</a>
 								</h3>
 	
-								<time class="date dt-published" datetime={blog.data.pubDate}>
+							<time class="date dt-published" datetime={blog.data.pubDate.toISOString()}>
 									{blog.data.pubDate.toLocaleDateString("en-US", {
 										dateStyle: "medium",
 									})}
