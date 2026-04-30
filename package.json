@@ -15,7 +15,6 @@
 		"@astrojs/rss": "^4.0.18",
 		"astro": "^6.1.5",
 		"astro-icon": "^1.1.5",
-		"decap-cms-app": "^3.12.2",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
