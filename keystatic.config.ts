@@ -28,7 +28,7 @@ export default config({
           label: "Tag",
           itemLabel: (props) => props.value,
         }),
-        author: field.ignored({
+        author: fields.ignored({
           label: "Author",
           defaultValue: "nerometa",
         }),
