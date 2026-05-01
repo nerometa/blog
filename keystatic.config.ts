@@ -1,4 +1,5 @@
 import { config, fields, collection } from "@keystatic/core";
+import { block } from "@keystatic/core/content-components";
 
 export default config({
     storage: {
@@ -21,6 +22,34 @@ export default config({
                             directory: "src/assets/images",
                             publicPath: "@assets/images",
                         },
+                    },
+                    components: {
+                        ResizedImage: block({
+                            label: "Resized Image",
+                            schema: {
+                                src: fields.image({
+                                    label: "Image",
+                                    directory: "src/assets/images",
+                                    publicPath: "@assets/images/",
+                                }),
+                                alt: fields.text({ label: "Alt text" }),
+                                size: fields.select({
+                                    label: "Size",
+                                    defaultValue: "full",
+                                    options: [
+                                        { label: "Full width", value: "full" },
+                                        {
+                                            label: "Medium (centered)",
+                                            value: "medium",
+                                        },
+                                        {
+                                            label: "Small (centered)",
+                                            value: "small",
+                                        },
+                                    ],
+                                }),
+                            },
+                        }),
                     },
                 }),
                 pubDate: fields.date({
