@@ -12,7 +12,7 @@ export default config({
             path: "src/content/blog/*",
             format: { contentField: "content" },
             schema: {
-                title: fields.slug({ name: { label: "Title" } }),
+                title: fields.text({ label: "Title" }),
                 content: fields.mdx({ label: "Content" }),
                 pubDate: fields.date({
                     label: "Published Date",
