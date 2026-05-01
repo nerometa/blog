@@ -6,7 +6,7 @@ export default config({
         repo: "nerometa/blog",
     },
     collections: {
-        posts: collection({
+        blog: collection({
             label: "Posts",
             slugField: "title",
             path: "src/content/blog/**",
