@@ -6,9 +6,12 @@ import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
 
+import node from "@astrojs/node";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://blog.nerometa.dev/",
+
   integrations: [
     mdx(),
     icon({
@@ -36,21 +39,28 @@ export default defineConfig({
     markdoc(),
     keystatic(),
   ],
+
   markdown: {
     shikiConfig: {
       theme: "rose-pine-moon",
       wrap: true,
     },
   },
+
   devToolbar: {
     enabled: false,
   },
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "th"],
   },
+
   image: {
     responsiveImages: true,
   },
-});
 
+  adapter: node({
+    mode: "standalone",
+  }),
+});
