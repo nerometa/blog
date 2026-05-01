@@ -1,26 +1,30 @@
 ---
-title: "My process coding the 'Easybank' challenge"
+title: My process coding the 'Easybank' challenge
 pubDate: 2024-07-30
-description: "I finished building this web page from a Frontend Mentor challenge, so here's my process on it."
-author: "nerometa"
 draft: false
+description: >-
+  I finished building this web page from a Frontend Mentor challenge, so here's
+  my process on it.
+tags: []
+author: nerometa
 ---
-
 Hey there! Took you a while, huh? There's a lot of shenanigans happening in the last 4 months. *Long story short*: I moved into Bangkok, went into college pursuing a Computer Engineering degree on the weekends, and got a job making smoothies to sustain my lifestyle and tuition fees. I know, totally not related to SWE at all, but I saw it as a great oppportunity. Surely I'll expand on why I think so.
 
 Since then, I've been serious with front-end development a whole lot more. It *is* a challenging aspect of web development once you get your feet wet for long enough, but some people may undermined or overlooked how hard it is just because there are designs to look for. I still think it's hard. And that's why I'm doing a challenge.
 
 Here's the [challenge](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN) if you wanna try. And here's my [solution](https://nerometa.github.io/easybank/) for it along with the [source code](https://github.com/nerometa/easybank).
 
+![](@assets/images/easybank-challenge/easybank-preview.png)
+
 I wanna expand my process on building the "Easybank" webpage challenge from [Frontend Mentor](https://frontendmentor.io). How I built it, what did I use, complications and frustrations, etc. So, let's go with their structure on this one.
 
 ## 🔧 Built with
 
-- React - the framework
-- Vite - the dev tools
-- Tailwind CSS - the styles
-- TypeScript - the "language"/type check solution
-- [Radix UI](https://www.radix-ui.com/) - the functional UI components library
+* React - the framework
+* Vite - the dev tools
+* Tailwind CSS - the styles
+* TypeScript - the "language"/type check solution
+* [Radix UI](https://www.radix-ui.com/) - the functional UI components library
 
 ## 💡 What I learned
 
@@ -110,6 +114,7 @@ An overlay needed to be fixed onto the webpage then adjust all position to 0, ex
 	{/* contents */}
 </ul>
 ```
+
 Since `margin` didn't really worked well with `absolute` elements. You centered it by calculate spacing required for each side of the element, minus the full width of the element. In this case it's `3rem`, `1.5rem` each left and right. After that you hit it with `left-[50%] -translate-x-[50%]`. `-translate-x-[50%]` would shift the whole element to the left and `left-50%` would bring it back to center.
 
 I learned how to use GitHub Actions to deploy this project, too. By using `pnpm`, I had to add extra steps to the deployment file, namely installing `pnpm` before most of the steps.
@@ -120,4 +125,4 @@ I really, really wanna do cool, fancy animations I've always seen in better webs
 
 ## 🗃️ Useful Resources
 
-- [Easybank landing page solution (playlist)](https://www.youtube.com/playlist?list=PLUWqFDiirlsuYscECzks6zIZWr_Cfcx9k) - Thanks to this person, I could finally get unstuck on the hero section and the mobile navigation.
+* [Easybank landing page solution (playlist)](https://www.youtube.com/playlist?list=PLUWqFDiirlsuYscECzks6zIZWr_Cfcx9k) - Thanks to this person, I could finally get unstuck on the hero section and the mobile navigation.
