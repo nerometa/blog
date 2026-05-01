@@ -10,6 +10,7 @@ export default config({
             label: "Posts",
             slugField: "title",
             path: "src/content/blog/**",
+            entryLayout: "content",
             format: { contentField: "content" },
             schema: {
                 title: fields.slug({ name: { label: "Title" } }),
@@ -36,10 +37,7 @@ export default config({
                     label: "Tag",
                     itemLabel: (props) => props.value,
                 }),
-                author: fields.text({
-                    label: "Author",
-                    defaultValue: "nerometa",
-                }),
+                author: fields.ignored(),
             },
         }),
     },
