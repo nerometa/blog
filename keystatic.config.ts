@@ -13,7 +13,15 @@ export default config({
             format: { contentField: "content" },
             schema: {
                 title: fields.text({ label: "Title" }),
-                content: fields.mdx({ label: "Content" }),
+                content: fields.mdx({
+                    label: "Content",
+                    options: {
+                        image: {
+                            directory: "src/assets/images",
+                            publicPath: "@assets/images"
+                      }
+                    }
+                }),
                 pubDate: fields.date({
                     label: "Published Date",
                 }),
