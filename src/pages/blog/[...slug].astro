@@ -1,17 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-	const blogs = await getCollection("blog");
-	return blogs.map((blog) => {
-		return {
-			params: {
-				slug: blog.data.slug,
-			},
-			props: blog,
-		};
-	});
+    const blogs = await getCollection("blog");
+    return blogs.map((blog) => {
+        return {
+            params: {
+                slug: blog.id,
+            },
+            props: blog,
+        };
+    });
 }
 
 const blog = Astro.props;
@@ -19,14 +20,23 @@ const { Content } = await render(blog);
 ---
 
 <Layout title={blog.data.title} description={blog.data.description}>
-	<article class="blog-post h-entry">
-		<!-- TODO: Write `p-author` microformat for the IndieWeb -->
-		<time class="date dt-published" datetime={blog.data.pubDate.toISOString()}>{blog.data.pubDate.toLocaleDateString("en-US", { dateStyle: 'medium' })}</time>
-		<h1 class="p-name" transition:name={blog.data.title}>{blog.data.title}</h1>
-		<content class="e-content">
-			<Content />
-		</content>
-		<!-- TODO: Write `u-url` (permalink) microformat for the IndieWeb -->
-	</article>
+    <article class="blog-post h-entry">
+        <!-- TODO: Write `p-author` microformat for the IndieWeb -->
+        <time
+            class="date dt-published"
+            datetime={blog.data.pubDate.toISOString()}
+            >{
+                blog.data.pubDate.toLocaleDateString("en-US", {
+                    dateStyle: "medium",
+                })
+            }</time
+        >
+        <h1 class="p-name" transition:name={blog.data.title}>
+            {blog.data.title}
+        </h1>
+        <content class="e-content">
+            <Content components={{ img: Image }} />
+        </content>
+        <!-- TODO: Write `u-url` (permalink) microformat for the IndieWeb -->
+    </article>
 </Layout>
-

@@ -1,96 +1,99 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 function sortPostsByDate(
-	posts: CollectionEntry<'blog'>[]
-): CollectionEntry<'blog'>[] {
-	return posts.sort(
-		(a, b) =>
-			new Date(b.data.pubDate).getTime() -
-			new Date(a.data.pubDate).getTime()
-	);
+    posts: CollectionEntry<"blog">[],
+): CollectionEntry<"blog">[] {
+    return posts.sort(
+        (a, b) =>
+            new Date(b.data.pubDate).getTime() -
+            new Date(a.data.pubDate).getTime(),
+    );
 }
 
 const blogs = sortPostsByDate(
-	await getCollection("blog", (blog: CollectionEntry<"blog">) => {
-		return (
-			import.meta.env.MODE !== "production" || blog.data.draft === false
-		);
-	})
-).filter((blog) => blog.data.slug.split("/").length === 1);
-
+    await getCollection("blog", (blog: CollectionEntry<"blog">) => {
+        return (
+            import.meta.env.MODE !== "production" || blog.data.draft === false
+        );
+    }),
+).filter((blog) => blog.id.split("/").length === 1);
 ---
 
 <Layout title="Blog">
-	<article class="h-entry">
-		<h1 class="p-name">Blog</h1>
-		<ul class="blogs e-content">
-			{
-				blogs.map((blog) => {
-					return (
-						<>
-							<li class="blog">
-								<h3 transition:name={blog.data.title}>
-									<a
-										href={blog.data.slug}
-										class="title">
-										{blog.data.title}
-									</a>
-								</h3>
-	
-							<time class="date dt-published" datetime={blog.data.pubDate.toISOString()}>
-									{blog.data.pubDate.toLocaleDateString("en-US", {
-										dateStyle: "medium",
-									})}
-								</time>
-							</li>
-						</>
-					);
-				})
-			}
-		</ul>
-	</article>
+    <article class="h-entry">
+        <h1 class="p-name">Blog</h1>
+        <ul class="blogs e-content">
+            {
+                blogs.map((blog) => {
+                    return (
+                        <>
+                            <li class="blog">
+                                <h3 transition:name={blog.data.title}>
+                                    <a href={blog.id} class="title">
+                                        {blog.data.title}
+                                    </a>
+                                </h3>
+
+                                <time
+                                    class="date dt-published"
+                                    datetime={blog.data.pubDate.toISOString()}
+                                >
+                                    {blog.data.pubDate.toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            dateStyle: "medium",
+                                        },
+                                    )}
+                                </time>
+                            </li>
+                        </>
+                    );
+                })
+            }
+        </ul>
+    </article>
 </Layout>
 
 <style>
-	.blogs {
-		padding: 0;
-		margin: 0;
-	}
+    .blogs {
+        padding: 0;
+        margin: 0;
+    }
 
-	.blog {
-		list-style-type: none;
-		margin-bottom: 0.5rem;
-	}
+    .blog {
+        list-style-type: none;
+        margin-bottom: 0.5rem;
+    }
 
-	.blog > * {
-		margin: 0;
-	}
+    .blog > * {
+        margin: 0;
+    }
 
-	.title {
-		text-decoration: none;
-		transition: color 150ms ease-in-out;
-	}
+    .title {
+        text-decoration: none;
+        transition: color 150ms ease-in-out;
+    }
 
-	.title:visited {
-		color: inherit;
-	}
+    .title:visited {
+        color: inherit;
+    }
 
-	.title:hover {
-		color: var(--title-color__hover);
-	}
+    .title:hover {
+        color: var(--title-color__hover);
+    }
 
-	.date {
-		flex: 0 0 130px;
-	}
+    .date {
+        flex: 0 0 130px;
+    }
 
-	@media (min-width: 25rem) {
-		.blog {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-	}
+    @media (min-width: 25rem) {
+        .blog {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 </style>
